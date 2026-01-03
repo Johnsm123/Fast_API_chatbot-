@@ -1,5 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
+<<<<<<< Updated upstream
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -11,6 +12,17 @@ def create_database():
             host='localhost',
             user='root',
             password='Samsimi@123'
+=======
+
+def create_database():
+    """Create the student_db database if it doesn't exist"""
+    try:
+        # Connect to MySQL server (without specifying database)
+        connection = mysql.connector.connect(
+            host='localhost',
+            user='root',  # Replace with your MySQL username
+            password='Samsimi@123'  # Replace with your MySQL password
+>>>>>>> Stashed changes
         )
         
         if connection.is_connected():
@@ -23,6 +35,7 @@ def create_database():
             # Use the database
             cursor.execute("USE intelligent_conversational_ai_db")
             
+<<<<<<< Updated upstream
             # Create table
             create_table_query = """
             CREATE TABLE IF NOT EXISTS conversational_entities (
@@ -30,6 +43,15 @@ def create_database():
                 name VARCHAR(255) NOT NULL,
                 age INT NOT NULL,
                 grade VARCHAR(50) NOT NULL
+=======
+            # Create entities table
+            create_table_query = """
+            CREATE TABLE IF NOT EXISTS conversational_entities (
+                id INT PRIMARY KEY,
+                name VARCHAR(100) NOT NULL,
+                age INT NOT NULL,
+                grade VARCHAR(10) NOT NULL
+>>>>>>> Stashed changes
             )
             """
             cursor.execute(create_table_query)
@@ -37,7 +59,10 @@ def create_database():
             
     except Error as e:
         print(f"Error: {e}")
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
     finally:
         if connection.is_connected():
             cursor.close()

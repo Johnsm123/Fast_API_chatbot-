@@ -29,8 +29,13 @@ def create_entity(db: Session, entity: ConversationalEntityCreate):
 def get_entity(db: Session, entity_id: int):
     return db.query(ConversationalEntityDB).filter(ConversationalEntityDB.id == entity_id).first()
 
+<<<<<<< Updated upstream
 def get_entities(db: Session, skip: int = 0, limit: int = 100):
     return db.query(ConversationalEntityDB).offset(skip).limit(limit).all()
+=======
+# def get_entities(db: Session, skip: int = 0, limit: int = 100):
+#     return db.query(ConversationalEntityDB).offset(skip).limit(limit).all()
+>>>>>>> Stashed changes
 
 def update_entity(db: Session, entity_id: int, entity: ConversationalEntityCreate):
     db_entity = db.query(ConversationalEntityDB).filter(ConversationalEntityDB.id == entity_id).first()

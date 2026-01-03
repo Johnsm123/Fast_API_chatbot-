@@ -2,4 +2,9 @@ fastapi
 uvicorn
 sqlalchemy
 mysql-connector-python
+<<<<<<< Updated upstream
 pydantic
+=======
+pydantic[email]
+python-dotenv
+>>>>>>> Stashed changes
